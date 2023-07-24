@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const page = async () => {
 
-  const posts = await getGalleryList({ limit: 30, offset: 1 })
+  const posts = await getGalleryList({ limit: 30, offset: 0 })
+
   return (
     <main className="mt-5 container mx-auto">
     <div className="my-5 text-3xl font-bold text-center">Photo Gallery</div>

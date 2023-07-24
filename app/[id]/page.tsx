@@ -17,7 +17,10 @@ const page: NextPage<PageProps> = async ({ params }) => {
     return (
         <div className="container mx-auto max-w-3xl	">
             {post && (
+                
                 <div className="mt-5 ">
+                    <div>
+                    </div>
                     <Image
                         className='rounded-xl w-full '
                         src={post.photo.url}
@@ -28,7 +31,7 @@ const page: NextPage<PageProps> = async ({ params }) => {
                     />
                     <div className="pt-5">
                         <div className='font-bold text-lg truncate'>
-                            {post.photo.title}
+                            {post.photo.id} . {post.photo.title}
                         </div>
                         <div className='pt-2'>
                             {post.photo.description}
