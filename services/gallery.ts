@@ -36,7 +36,7 @@ export const getGalleryList = async (arg: IGalleryListReq) => {
 
     try {
 
-        const { data } = await axios.get<IGalleryListRes>("https://api.slingacademy.com/v1/sample-data/photos", { params: arg })
+        const { data } = await axios.get<IGalleryListRes>(ENDPOINTS.GET_GALLERY, { params: arg })
 
         // console.log(data)
 
@@ -53,7 +53,7 @@ export const getGalleryList = async (arg: IGalleryListReq) => {
 export const getGalleryById = async (arg: IGalleryListByID) => {
     try {
 
-        const { data } = await axios.get<IGalleryIdRes>(`https://api.slingacademy.com/v1/sample-data/photos/${arg.id}`)
+        const { data } = await axios.get<IGalleryIdRes>(ENDPOINTS.GET_GALLERY + "/" + arg.id)
 
         return data
 

@@ -1,21 +1,14 @@
-import axios from 'axios'
+import axios, { AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios'
 
-const onRequest = (config:any) => {
+axios.interceptors.request.use((requestConfig: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
+    requestConfig.baseURL = process.env.API_URL
+    return requestConfig;
+}, (error: AxiosError): Promise<AxiosError> => {
+    return Promise.reject(error)
+})
 
-    config.baseURL = process.env.API_URL
-    return config
-}
-
-const onRequestError = () => {
-
-}
-
-axios.interceptors.response.use(onRequest, onRequestError);
-
-const onResponse = () => {
-
-}
-
-const onResponseError = () => {
-
-}
+axios.interceptors.response.use((responseConfig: AxiosResponse): AxiosResponse => {
+    return responseConfig
+}, (error: AxiosError): AxiosError => {
+    return error
+});
