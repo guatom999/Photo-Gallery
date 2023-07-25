@@ -15,7 +15,7 @@ const page = async () => {
         return (
           <div
             key={index}
-            className="m-5 border rounded-md overflow-hidden transition duration-150 hover:scale-110"
+            className="m-5 border rounded-lg overflow-hidden transition duration-1000 hover:scale-110"
           >
             <Link href={`/${item.id}`}>
               <div>

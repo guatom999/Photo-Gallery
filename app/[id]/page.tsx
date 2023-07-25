@@ -18,7 +18,7 @@ const page: NextPage<PageProps> = async ({ params }) => {
         <div className="container mx-auto max-w-3xl	">
             {post && (
                 
-                <div className="mt-5 ">
+                <div className="border rounded-xl mt-5 ">
                     <div>
                     </div>
                     <Image
@@ -29,7 +29,7 @@ const page: NextPage<PageProps> = async ({ params }) => {
                         sizes="100"
                         alt="test"
                     />
-                    <div className="pt-5">
+                    <div className="py-5 px-5">
                         <div className='font-bold text-lg truncate'>
                             {post.photo.id} . {post.photo.title}
                         </div>
